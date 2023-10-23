@@ -1,4 +1,4 @@
-project_id = "dena-ai-sandbox-28-gcp"
+project_id = "secrets"
 location   = "us-central1"
 
 run = {
