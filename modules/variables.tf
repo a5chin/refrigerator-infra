@@ -14,12 +14,16 @@ variable "run" {
     executor = object({
       id = string
       roles = optional(
-        list(string), [
+        set(string), [
           # TODO: decrese authority
           "roles/editor",
         ]
       )
     })
+    image              = string
+    max_instance_count = optional(number, 1)
+    min_instance_count = optional(number, 0)
+    name               = string
   })
 }
 
