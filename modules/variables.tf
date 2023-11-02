@@ -24,6 +24,13 @@ variable "run" {
     max_instance_count = optional(number, 1)
     min_instance_count = optional(number, 0)
     name               = string
+    env_vars = object({
+      DB_USER    = string
+      DB_PWD     = string
+      DB_NAME    = string
+      DB_TCPHOST = string
+      DB_PORT    = string
+    })
   })
 }
 
@@ -33,8 +40,8 @@ variable "db" {
     instance_name = string
     database_name = optional(string, "ingredients")
     version       = optional(string, "db-f1-micro")
-    tier          = optional(string, "UTF8")
-    collation     = optional(string, "en_US.UTF8")
+    charset       = optional(string, "utf8mb4")
+    collation     = optional(string, "utf8mb4_unicode_ci")
     executor = object({
       id = string
       roles = optional(
