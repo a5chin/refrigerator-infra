@@ -29,7 +29,7 @@ variable "run" {
       DB_PWD     = string
       DB_NAME    = string
       DB_TCPHOST = string
-      DB_PORT    = string
+      DB_PORT    = number
     })
   })
 }

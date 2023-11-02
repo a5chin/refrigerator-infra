@@ -8,9 +8,9 @@ resource "google_cloud_run_v2_service" "main" {
       min_instance_count = var.run.min_instance_count
     }
 
-    vpc_access{
+    vpc_access {
       connector = google_vpc_access_connector.main.id
-      egress = "PRIVATE_RANGES_ONLY"
+      egress    = "PRIVATE_RANGES_ONLY"
     }
 
     service_account = google_service_account.run_executor.email
@@ -21,7 +21,7 @@ resource "google_cloud_run_v2_service" "main" {
       dynamic "env" {
         for_each = var.run.env_vars
         content {
-          name = env.key
+          name  = env.key
           value = env.value
         }
       }
