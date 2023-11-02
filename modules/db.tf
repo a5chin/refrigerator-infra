@@ -23,7 +23,7 @@ resource "google_sql_database" "food" {
 }
 
 resource "google_sql_user" "main" {
-  name     = var.db.DB_USER
+  name     = var.run.env_vars.DB_USER
   instance = google_sql_database_instance.ref.name
-  password = var.db.DB_PWD
+  password = var.run.env_vars.DB_PWD
 }

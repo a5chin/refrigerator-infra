@@ -27,6 +27,10 @@ resource "google_cloud_run_v2_service" "main" {
       }
     }
   }
+
+  depends_on = [
+    google_sql_database_instance.ref
+  ]
 }
 
 resource "google_service_account" "run_executor" {
