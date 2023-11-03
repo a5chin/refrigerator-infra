@@ -25,6 +25,8 @@ variable "run" {
     min_instance_count = optional(number, 0)
     name               = string
     env_vars = object({
+      HOSTNAME   = string
+      PORT       = string
       DB_USER    = string
       DB_PWD     = string
       DB_NAME    = string
