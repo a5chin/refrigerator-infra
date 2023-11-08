@@ -53,3 +53,13 @@ variable "db" {
     })
   })
 }
+
+variable "github" {
+  description = "Settings for GitHub"
+  type = object({
+    sa = object({
+      id    = string
+      roles = set(string)
+    })
+  })
+}
