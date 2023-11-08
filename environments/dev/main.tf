@@ -6,4 +6,6 @@ module "refrigerator" {
 
   run = var.run
   db  = var.db
+
+  github = var.github
 }
