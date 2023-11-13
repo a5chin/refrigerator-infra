@@ -12,7 +12,7 @@ resource "google_project_iam_custom_role" "github" {
 }
 
 resource "google_project_iam_member" "github" {
-  project  = var.project_id
-  role     = google_project_iam_custom_role.github.name
-  member   = "serviceAccount:${google_service_account.github.email}"
+  project = var.project_id
+  role    = google_project_iam_custom_role.github.name
+  member  = "serviceAccount:${google_service_account.github.email}"
 }
