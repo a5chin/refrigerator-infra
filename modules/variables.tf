@@ -58,8 +58,15 @@ variable "github" {
   description = "Settings for GitHub"
   type = object({
     sa = object({
-      id    = string
-      roles = set(string)
+      id = string
+      roles = optional(
+        set(string), [
+          "artifactregistry.repositories.uploadArtifacts",
+          "iam.serviceAccounts.actAs",
+          "storage.buckets.get",
+          "storage.objects.create",
+        ]
+      )
     })
   })
 }
