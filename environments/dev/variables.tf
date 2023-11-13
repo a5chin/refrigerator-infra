@@ -15,3 +15,7 @@ variable "run" {
 variable "db" {
   description = "Settings for the Cloud SQL"
 }
+
+variable "github" {
+  description = "Settings for GitHub"
+}
